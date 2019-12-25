@@ -15,7 +15,7 @@ Telegram::Bot::Client.run(token) do |bot|
     case message.text
     when '/start'
       scheduler = Rufus::Scheduler.new
-      scheduler.every '10s' do
+      scheduler.cron '0 16 * * *' do
         response = HTTParty.get('http://inspirobot.me/api?generate=true')
         bot.api.send_photo(chat_id: message.chat.id, photo: response.body)
       end
