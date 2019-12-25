@@ -2,6 +2,7 @@ require 'dotenv'
 require 'telegram/bot'
 require 'byebug'
 require "time"
+require 'httparty'
 
 Dotenv.load
 
@@ -12,7 +13,8 @@ Telegram::Bot::Client.run(token) do |bot|
     case message.text
     when '/start'
       while true do
-        bot.api.send_message(chat_id: message.chat.id, text: "Hello, #{message.from.first_name}")
+        response = HTTParty.get('http://inspirobot.me/api?generate=true')
+        bot.api.send_photo(chat_id: message.chat.id, photo: response.body)
         sleep(ENV['SLEEP_TIME'].to_i)
       end
     end
