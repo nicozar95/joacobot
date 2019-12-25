@@ -1,6 +1,7 @@
 require 'dotenv'
 require 'telegram/bot'
 require 'byebug'
+require "time"
 
 Dotenv.load
 
@@ -10,9 +11,9 @@ Telegram::Bot::Client.run(token) do |bot|
   bot.listen do |message|
     case message.text
     when '/start'
-      bot.api.send_message(chat_id: message.chat.id, text: "Hello, #{message.from.first_name}")
-    when '/stop'
-      bot.api.send_message(chat_id: message.chat.id, text: "Bye, #{message.from.first_name}")
-    end
+      while true do
+        bot.api.send_message(chat_id: message.chat.id, text: "Hello, #{message.from.first_name}")
+        sleep(ENV['SLEEP_TIME'])
+      end
   end
 end
