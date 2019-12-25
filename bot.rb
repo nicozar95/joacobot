@@ -15,5 +15,6 @@ Telegram::Bot::Client.run(token) do |bot|
         bot.api.send_message(chat_id: message.chat.id, text: "Hello, #{message.from.first_name}")
         sleep(ENV['SLEEP_TIME'])
       end
+    end
   end
 end
