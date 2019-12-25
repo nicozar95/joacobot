@@ -13,7 +13,7 @@ Telegram::Bot::Client.run(token) do |bot|
     when '/start'
       while true do
         bot.api.send_message(chat_id: message.chat.id, text: "Hello, #{message.from.first_name}")
-        wait(ENV['SLEEP_TIME'])
+        sleep(ENV['SLEEP_TIME'].to_i)
       end
     end
   end
