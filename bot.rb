@@ -4,6 +4,7 @@ require 'byebug'
 require "time"
 require 'httparty'
 require 'telegram/bot'
+require 'rufus/scheduler'
 
 Dotenv.load
 
