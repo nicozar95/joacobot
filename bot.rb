@@ -9,7 +9,6 @@ Dotenv.load
 
 token = ENV['TELEGRAM_TOKEN']
 
-byebug
 Telegram::Bot::Client.run(token) do |bot|
   bot.listen do |message|
     case message.text
