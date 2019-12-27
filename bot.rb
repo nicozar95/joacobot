@@ -14,7 +14,7 @@ Telegram::Bot::Client.run(token) do |bot|
   bot.listen do |message|
     case message.text
     when '/start'
-      loop do
+      while true do
         scheduler = Rufus::Scheduler.new
         scheduler.cron '0 16 * * *' do
           response = HTTParty.get('http://inspirobot.me/api?generate=true')
