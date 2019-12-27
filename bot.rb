@@ -32,7 +32,7 @@ Telegram::Bot::Client.run(token) do |bot|
     when /mi rey/i
       response = HTTParty.get('http://inspirobot.me/api?generate=true')
       bot.api.send_photo(chat_id: message.chat.id, photo: response.body)
-    when /joacobot/i
+    when /joacobot|rey joaco/i
       bot.api.send_message(chat_id: message.chat.id, text: PHRASES.sample)
     end
   end
