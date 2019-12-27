@@ -19,9 +19,9 @@ TIME = ["dias", "horas"]
 Telegram::Bot::Client.run(token) do |bot|
   bot.listen do |message|
     case message.text
-    when /el otro dia/i || /la otra vez/i || /me paso/i
+    when /el otro dia|la otra vez|me paso/i
       bot.api.send_message(chat_id: message.chat.id, text: "como en one piece")
-    when /cuanto/i || /cuando/
+    when /cuanto|cuando/
       text = "#{rand(1..100)} #{TIME.sample}"
       bot.api.send_message(chat_id: message.chat.id, text: text)
     when /mi rey/i
