@@ -14,7 +14,7 @@ PHRASES = ["es una mierda", "me quiero ir", "malardo", "buenardo",
            "q haces mi rey?", "ya fue, hago home", "arre", "same", "q paja",
            "ya fue, renuncio", "LOCO NO ME DAN PERMISOS!", "me voy a fumar un pucho",
            "QUE PAJA ESTE PROYECTOOOOOOoooooOoooO!", "josena que opinas?", "me voy a pasar a rails",
-           "Que cringe"]
+           "Que cringe", "de rucula"]
 
 PEOPLE = ["paquito amoroso", "leon", "truenito", "nicki nicole","bokita el mas grande papa"]
 
