@@ -12,9 +12,10 @@ token = ENV['TELEGRAM_TOKEN']
 
 PHRASES = ["es una mierda", "me quiero ir", "malardo", "buenardo",
            "q haces mi rey?", "ya fue, hago home", "arre", "same", "q paja",
-           "ya fue, renuncio", "LOCO NO ME DAN PERMISOS!", "me voy a fumar un pucho"]
+           "ya fue, renuncio", "LOCO NO ME DAN PERMISOS!", "me voy a fumar un pucho",
+           "QUE PAJA ESTE PROYECTOOOOOOoooooOoooO!"]
 
-PEOPLE = ["paquito amoroso", "truenito", "nicki nicole","bokita el mas grande papa"]
+PEOPLE = ["paquito amoroso", "leon", "truenito", "nicki nicole","bokita el mas grande papa"]
 
 TIME = ["dias", "horas"]
 
