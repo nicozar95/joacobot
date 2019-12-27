@@ -22,7 +22,7 @@ Telegram::Bot::Client.run(token) do |bot|
     when /el otro dia/i || /la otra vez/i || /me paso/i
       bot.api.send_message(chat_id: message.chat.id, text: "como en one piece")
     when /cuanto/i || /cuando/
-      text = "#{rand(1..10)} #{TIME.sample}"
+      text = "#{rand(1..100)} #{TIME.sample}"
       bot.api.send_message(chat_id: message.chat.id, text: text)
     when /mi rey/i
       response = HTTParty.get('http://inspirobot.me/api?generate=true')
