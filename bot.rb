@@ -10,7 +10,7 @@ Dotenv.load
 
 token = ENV['TELEGRAM_TOKEN']
 
-PHRASES = ["es una mierda", "me quiero ir", "malardo", "buenardo", "q haces mi rey?", "ya fue hago, home"]
+PHRASES = ["es una mierda", "me quiero ir", "malardo", "buenardo", "q haces mi rey?", "ya fue, hago home"]
 
 Telegram::Bot::Client.run(token) do |bot|
   bot.listen do |message|
