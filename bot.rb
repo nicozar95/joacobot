@@ -12,13 +12,17 @@ token = ENV['TELEGRAM_TOKEN']
 
 PHRASES = ["es una mierda", "me quiero ir", "malardo", "buenardo",
            "q haces mi rey?", "ya fue, hago home", "arre", "same", "q paja",
-           "ya fue, renuncio", "LOCO NO ME DAN PERMISOS!"]
+           "ya fue, renuncio", "LOCO NO ME DAN PERMISOS!", "me voy a fumar un pucho"]
+
+PEOPLE = ["paquito amoroso", "truenito", "nicki nicole","bokita el mas grande papa"]
 
 TIME = ["dias", "horas"]
 
 Telegram::Bot::Client.run(token) do |bot|
   bot.listen do |message|
     case message.text
+    when /quien/i
+      bot.api.send_message(chat_id: message.chat.id, text: PEOPLE.sample)
     when /el otro dia|la otra vez|me paso/i
       bot.api.send_message(chat_id: message.chat.id, text: "como en one piece")
     when /cuanto|cuando/
