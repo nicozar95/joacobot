@@ -14,7 +14,7 @@ PHRASES = ["es una mierda", "me quiero ir", "malardo", "buenardo",
            "q haces mi rey?", "ya fue, hago home", "arre", "same", "q paja",
            "ya fue, renuncio", "LOCO NO ME DAN PERMISOS!", "me voy a fumar un pucho",
            "QUE PAJA ESTE PROYECTOOOOOOoooooOoooO!", "josena que opinas?", "me voy a pasar a rails",
-           "Que cringe", "de rucula"]
+           "Que cringe", "de rucula", "como en one piece"]
 
 PEOPLE = ["paquito amoroso", "leon", "truenito", "nicki nicole","bokita el mas grande papa"]
 
@@ -33,7 +33,7 @@ Telegram::Bot::Client.run(token) do |bot|
     when /mi rey/i
       response = HTTParty.get('http://inspirobot.me/api?generate=true')
       bot.api.send_photo(chat_id: message.chat.id, photo: response.body)
-    when /joacobot|rey joaco/i
+    when /joacobot|joaco|rey joaco|rey/i
       bot.api.send_message(chat_id: message.chat.id, text: PHRASES.sample)
     end
   end
