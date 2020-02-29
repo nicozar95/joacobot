@@ -15,9 +15,10 @@ PHRASES = ["es una mierda", "me quiero ir", "malardo", "buenardo",
            "ya fue, renuncio", "LOCO NO ME DAN PERMISOS!", "me voy a fumar un pucho",
            "QUE PAJA ESTE PROYECTOOOOOOoooooOoooO!", "me voy a pasar a rails",
            "Que cringe", "de rucula", "como en one piece", "la unica droga q consumo es el amor",
-           "¿cuanto tiempo de licencia me dan si me rompo una pierna?"]
+           "¿cuanto tiempo de licencia me dan si me rompo una pierna?", "no se si quiero seguir siendo desarrollador",
+           "me quiero ir a mi casa", "los voy a denunciar", "chau me voy", "el pan es un veneno"]
 
-PEOPLE = ["paquito amoroso", "leon", "truenito", "nicki nicole","bokita el mas grande papa"]
+PEOPLE = ["paquito amoroso", "leon", "truenito", "nicki nicole","bokita el mas grande papa", "el payaso plin plin"]
 
 TIME = ["dias", "horas"]
 
@@ -26,15 +27,13 @@ Telegram::Bot::Client.run(token) do |bot|
     case message.text
     when /quien/i
       bot.api.send_message(chat_id: message.chat.id, text: PEOPLE.sample)
-    when /el otro dia|la otra vez|me paso/i
-      bot.api.send_message(chat_id: message.chat.id, text: "como en one piece")
     when /cuanto|cuando/i
       text = "#{rand(1..100)} #{TIME.sample}"
       bot.api.send_message(chat_id: message.chat.id, text: text)
     when /mi rey/i
       response = HTTParty.get('http://inspirobot.me/api?generate=true')
       bot.api.send_photo(chat_id: message.chat.id, photo: response.body)
-    when /joacobot|joaco|rey joaco|rey/i
+    when /joacobot|rey joaco|rey/i
       bot.api.send_message(chat_id: message.chat.id, text: PHRASES.sample)
     end
   end
