@@ -20,16 +20,11 @@ PHRASES = ["es una mierda", "me quiero ir", "malardo", "buenardo",
 
 PEOPLE = ["paquito amoroso", "leon", "truenito", "nicki nicole","bokita el mas grande papa", "el payaso plin plin"]
 
-TIME = ["dias", "horas"]
-
 Telegram::Bot::Client.run(token) do |bot|
   bot.listen do |message|
     case message.text
-    when /quien/i
+    when /quien joaco/i
       bot.api.send_message(chat_id: message.chat.id, text: PEOPLE.sample)
-    when /cuanto|cuando/i
-      text = "#{rand(1..100)} #{TIME.sample}"
-      bot.api.send_message(chat_id: message.chat.id, text: text)
     when /mi rey/i
       response = HTTParty.get('http://inspirobot.me/api?generate=true')
       bot.api.send_photo(chat_id: message.chat.id, photo: response.body)
